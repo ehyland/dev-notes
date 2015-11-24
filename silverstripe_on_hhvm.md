@@ -16,9 +16,11 @@
 10. `/etc/init.d/nginx restart`  
 11. `update-rc.d hhvm defaults`  
 12. `/usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60`  
+
 # HHVM configuration files  
 - /etc/hhvm/php.ini
-- /etc/hhvm/server.ini
+- /etc/hhvm/server.ini  
+
 # Silverstripe nginx config file  
 **silverstripe.config**  
 ```nginx
