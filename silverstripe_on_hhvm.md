@@ -1,31 +1,26 @@
 # Setting up Ubuntu 14.04 for silverstripe on HHVM
 
-**Update packages**
-1. `apt-get update && apt-get upgrade`
-
-**Install NGINX**
-2. `apt-get install nginx`
-
-**Install HHVM**
-3. `apt-get install software-properties-common`
-4. `apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449`
-5. `add-apt-repository "deb http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"`
-6. `apt-get update`
-7. `apt-get install hhvm`
-
-**Configure NGINX & HHVM** [more info](https://github.com/facebook/hhvm/wiki/FastCGI)
-8. `/usr/share/hhvm/install_fastcgi.sh`
-9. `/etc/init.d/hhvm restart`
-10. `/etc/init.d/nginx restart`
-11. `update-rc.d hhvm defaults`
-12. `/usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60`
-
-# HHVM configuration files
+**Update packages**  
+1. `apt-get update && apt-get upgrade`  
+**Install NGINX**  
+2. `apt-get install nginx`  
+**Install HHVM**  
+3. `apt-get install software-properties-common`  
+4. `apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449`  
+5. `add-apt-repository "deb http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"`  
+6. `apt-get update`  
+7. `apt-get install hhvm`  
+**Configure NGINX & HHVM** [more info](https://github.com/facebook/hhvm/wiki/FastCGI)  
+8. `/usr/share/hhvm/install_fastcgi.sh`  
+9. `/etc/init.d/hhvm restart`  
+10. `/etc/init.d/nginx restart`  
+11. `update-rc.d hhvm defaults`  
+12. `/usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60`  
+# HHVM configuration files  
 - /etc/hhvm/php.ini
 - /etc/hhvm/server.ini
-
-# Silverstripe nginx config file
-**silverstripe.config**
+# Silverstripe nginx config file  
+**silverstripe.config**  
 ```nginx
 fastcgi_buffer_size 32k;
 fastcgi_busy_buffers_size 64k;
@@ -72,8 +67,8 @@ location ~* /(cms|framework)/silverstripe_version$ {
 }
 ```
 
-# Example config file for a website
-**sites-available/mysite**
+# Example config file for a website  
+**sites-available/mysite**  
 ```nginx
 server {
     listen 80;
