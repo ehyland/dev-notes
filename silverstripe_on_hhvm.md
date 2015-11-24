@@ -22,7 +22,7 @@
 - /etc/hhvm/server.ini  
 
 # Silverstripe nginx config file  
-**silverstripe.config**  
+*silverstripe.conf*  
 ```nginx
 fastcgi_buffer_size 32k;
 fastcgi_busy_buffers_size 64k;
@@ -70,7 +70,7 @@ location ~* /(cms|framework)/silverstripe_version$ {
 ```
 
 # Example config file for a website  
-**sites-available/mysite**  
+*sites-available/mysite*  
 ```nginx
 server {
     listen 80;
